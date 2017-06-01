@@ -2,10 +2,15 @@
 A web based portal for an educational institute
 
 Server Machine Installation Guide:
+
 •	Install Apache tomcat (8.0.35) on the server machine.
+
 •	Install JRE8.
+
 •	Install MySql server and build the following tables:
+
   o	adminrec(uname varchar(50),password varchar(100))
+  
   o	approvedstudent(sid varchar(20) primary key,sname varchar(50),uname varchar(30),password varchar(30),dob varchar(20),gender varchar(10),permAddr varchar(100),presentAddr varchar(100),phn varchar(15),mob(varchar(15),escore int,batch varchar(10),stream varchar(30))
   o	assignments(ano int primary key references setassignment(qno),sid varchar(20),fname varchar(50),fileloc varchar(200),dt varchar(20))
   o	attendance(sid varcahar(20) references approvedstudent(sid),sname varchar(50) references approvedstudent(sname),atd float)
@@ -28,3 +33,6 @@ Server Machine Installation Guide:
   o	viewednotification(heading varchar(30),message varchar(30),tag varchar(30),sid varchar(20))
 •	Import the project in the server machine and add it to the server.
 •	Create folder “UploadedFile” in E:\ drive and subfolders “AssignmentSubmission”, “Attendance”, “Notice”, “Question”, “Temp” in E:\UploadedFile.
+
+
+You must create an account in bulksms.com and put your username and password in services/SendSMS.java
