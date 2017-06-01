@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Send Email</title>
+</head>
+<style type="text/css">
+body{
+	font-family: Georgia;
+	font-size: x-large;
+	font-style: normal;
+	font-variant: normal;
+	color: #003366;
+
+}
+	a:hover {
+    color: white;
+    font-size: large;
+	}
+input[type=text] {
+    background-color: #FDFACB;
+    color: blue;
+}
+input[type=password] {
+    background-color: #FDFACB;
+    color: blue;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #003366;
+    border: none;
+    color: white;
+    padding: 16px 16px;
+    text-decoration: none;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+</style>
+<body bgcolor="#5fca90">
+
+<br>
+<form action="AdminEmailServlet" method="post">
+<table>
+<tr>
+<th>Enter your password: </th>
+<td><input type="password" name="mailpass"></td>
+</tr>
+
+<tr>
+<th>To: </th>
+<td><input type="text" name="recvid" placeholder="Enter Reciever's Email Id"></td>
+</tr>
+
+<tr>
+<th>Message: </th>
+<td><textarea rows="30" cols="50" name="message"></textarea></td>
+</tr>
+
+
+</table>
+<input type="submit">
+</form>
+
+<a href="AdminHomepage.jsp">HOME</a>
+</body>
+</html>

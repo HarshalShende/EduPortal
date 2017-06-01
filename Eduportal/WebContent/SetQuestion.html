@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Set questions for exams</title>
+<style type="text/css">
+body{
+	font-family: Georgia;
+	font-size: x-large;
+	font-style: normal;
+	font-variant: normal;
+	color: #003366;
+
+}
+	a:hover {
+    color: white;
+    font-size: large;
+	}
+input[type=text] {
+    background-color: #FDFACB;
+    color: blue;
+}
+input[type=password] {
+    background-color: #FDFACB;
+    color: blue;
+}
+input[type=button], input[type=submit], input[type=reset],button {
+    background-color: #003366;
+    border: none;
+    color: white;
+    padding: 16px 16px;
+    text-decoration: none;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+</style>
+<script type="text/javascript">
+
+function fillSub()
+{
+	var yr=document.getElementById("qsem").value;
+	var sub=document.getElementById("qsub");
+	var mycode="";
+	if(yr=="1")
+		{
+		mycode='<option>Computer Programming</option>';
+		mycode+='<option>Computer Organization</option>';
+		sub.innerHTML=mycode;
+		}
+	else if(yr=="2")
+		{
+		mycode='<option>Automata</option>';
+		mycode+='<option>Computer Architechture</option>';
+		sub.innerHTML=mycode;
+		}
+	else if(yr=="3")
+		{
+		mycode='<option>Computer Networking</option>';
+		mycode+='<option>DBMS</option>';
+		sub.innerHTML=mycode;
+		}
+	else if(yr=="4")
+		{
+		mycode='<option>Quantative Analysis</option>';
+		mycode+='<option>Logical Reasoning</option>';
+		mycode+='<option>Verbal Ability</option>';
+		sub.innerHTML=mycode;
+		}
+	else if(yr=="5")
+		{
+		mycode='<option>Computer Programming</option>';
+		mycode+='<option>Computer Organization</option>';
+		mycode+='<option>Automata</option>';
+		mycode+='<option>Computer Architecture</option>';
+		mycode+='<option>Computer Networking</option>';
+		mycode+='<option>DBMS</option>';
+		mycode+='<option>Quantative Analysis</option>';
+		mycode+='<option>Logical Reasoning</option>';
+		mycode+='<option>Verbal Ability</option>';
+		sub.innerHTML=mycode;
+		}
+	else
+		{
+		sub.innerHTML=mycode;
+		}
+	}
+	
+	function clearSub()
+	{
+		document.getElementById("qsub").innerHTML="";
+	}
+
+</script>
+</head>
+<body bgcolor="#5fca90">
+
+<form action="SetQuestionServlet" onreset="clearSub()">
+
+<table>
+
+<tr>
+<th>Weightage</th>
+<td><select id="qweght" name="qweight">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+
+</select>
+</td>
+</tr>
+
+<tr>
+<th>Semester</th>
+<td><select id="qsem" name="qsem" onchange="fillSub()">
+<option>Entrance</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+
+</select>
+</td>
+</tr>
+
+<tr>
+<th>Subject</th>
+<td><select id="qsub" name="qsub">
+</select>
+</td>
+</tr>
+
+<tr>
+<th>Question</th>
+<td><textarea rows="15" cols="30" id="question" name="question"></textarea></td>
+</tr>
+
+<tr>
+<th>Option1</th>
+<td><input type="text" id="qop1" name="qop1"></td>
+</tr>
+
+<tr>
+<th>Option2</th>
+<td><input type="text" id="qop2" name="qop2">
+</td>
+</tr>
+
+<tr>
+<th>Option3</th>
+<td><input type="text" id="qop3" name="qop3">
+</td>
+</tr>
+
+<tr>
+<th>Option4</th>
+<td><input type="text" id="qop4" name="qop4">
+</td>
+</tr>
+
+<tr>
+<th>Correct Option</th>
+<td><select id="qans" name="qans">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+</select>
+
+</table>
+
+<br>
+<input type="submit" value="Submit">
+&nbsp;
+<input type="reset" value="Clear">
+&nbsp;
+
+
+</form>
+<button onclick="location.href='FacultyHomepage.jsp';">BACK </button>
+</body>
+</html>
